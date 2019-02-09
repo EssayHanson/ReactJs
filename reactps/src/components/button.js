@@ -1,22 +1,16 @@
 import React from 'react';
 
 class Button extends React.Component {
-
-    state = { counter: 0 };
     
     handleClick = () => {
-        this.setState((prevState) => {
-            return {
-                counter: prevState.counter + 1
-            }
-        });
+        this.props.onClickFunction(this.props.incrementValue)
     }
 
     render() {
         return (
 
             <button onClick={this.handleClick}>
-                {this.state.counter}
+                +{this.props.incrementValue}
             </button>
         );        
     }
